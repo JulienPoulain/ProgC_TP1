@@ -10,20 +10,21 @@ int main() {
 	int boss_dmgAtk = 15;
 	
 	while(heros_pv > 0 && boss_pv > 0) {
-		printf("================================\n");
 		printf("Tour %d\n", tour);
-		printf("PV BOSS: %d\n", boss_pv);
+		printf("HEROS: %d/100\n", heros_pv);
+		printf("BOSS : %d/100\n\n", boss_pv);
 		
 		printf("JOUEUR attaque BOSS\n");
 		printf("%d DMG\n", heros_dmgAtk);
 		boss_pv -= heros_dmgAtk;
-		printf("BOSS - PV : %d\n", boss_pv);
+		printf("PV BOSS : %d\n\n", boss_pv);
 		
 		printf("BOSS attaque JOUEUR\n");
 		printf("%d DMG\n", boss_dmgAtk);
 		heros_pv -= boss_dmgAtk;
-		printf("JOUEUR - PV : %d\n", heros_pv);
+		printf("PV JOUEUR : %d\n\n", heros_pv);
 		
+		printf("================================\n\n");
 		tour += 1;
 	}
 	
