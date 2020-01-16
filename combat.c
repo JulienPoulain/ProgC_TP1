@@ -2,10 +2,14 @@
 
 int main() {
 	int tour = 1;
-	int boss_pv = 100;
+	
+	int heros_pv = 100;
 	int heros_dmgAtk = 10;
 	
-	while(boss_pv > 0) {
+	int boss_pv = 100;
+	int boss_dmgAtk = 15;
+	
+	while(heros_pv > 0 && boss_pv > 0) {
 		printf("================================\n");
 		printf("Tour %d\n", tour);
 		printf("PV BOSS: %d\n", boss_pv);
@@ -13,10 +17,20 @@ int main() {
 		printf("JOUEUR attaque BOSS\n");
 		printf("%d DMG\n", heros_dmgAtk);
 		boss_pv -= heros_dmgAtk;
-		
 		printf("BOSS - PV : %d\n", boss_pv);
 		
+		printf("BOSS attaque JOUEUR\n");
+		printf("%d DMG\n", boss_dmgAtk);
+		heros_pv -= boss_dmgAtk;
+		printf("JOUEUR - PV : %d\n", heros_pv);
+		
 		tour += 1;
+	}
+	
+	if(heros_pv <= 0) {
+		printf("VOUS AVEZ PERDU\n");
+	} else {
+		printf("VICTOIRE !\n");
 	}
 	
 	return 0;
