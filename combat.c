@@ -31,12 +31,12 @@ int main() {
 	while (heros_pv > 0 && boss_pv > 0) {
 		printf("Tour %d\n", tour);
 		// État du héros
-		printf("HEROS: %d/100 %d/%d", heros_pv, heros_pm, heros_pmMax);
+		printf("HEROS: %d/100PV %d/%dPM", heros_pv, heros_pm, heros_pmMax);
 		if (heros_statutPoison)
 			printf(" POISON");
 		printf("\n");
 		// État du boss
-		printf("BOSS : %d/100", boss_pv);
+		printf("BOSS : %d/100PV %d/%dPM", boss_pv, boss_pm, boss_pmMax);
 		if (boss_statutPoison)
 			printf(" POISON");
 		printf("\n");
@@ -85,7 +85,7 @@ int main() {
 			printf("Vous buvez un antidote.\n");
 			if (heros_statutPoison == 1) {
 				printf("Vous etes gueri du poison.\n");
-				heros_statutPoison == 0;
+				heros_statutPoison = 0;
 			}
 		}
 		printf("\n");
